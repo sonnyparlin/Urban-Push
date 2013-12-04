@@ -6,15 +6,15 @@ Available from: http://wordpress.org/plugins/urban-push/
 
 Plugin Name 
 ---------------------------
-Contributors: sonnyjitsu
-Donate link: http://sonnyparlin.com/2012/05/introducing-urban-push/
-Tags: urban airship, push notifications, push
-Requires at least: 2.0.2
-Tested up to: 3.4.1
-License: GPLv2
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Contributors: sonnyjitsu  
+Donate link: http://sonnyparlin.com/2012/05/introducing-urban-push/  
+Tags: urban airship, push notifications, push  
+Requires at least: 2.0.2  
+Tested up to: 3.4.1  
+License: GPLv2  
+License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 
-A plugin that uses the Urban Airship API to send a push notification from the post creation page.
+A plugin that uses the Urban Airship API to send a push notification from the post creation page.  
 
 Description
 ----------------------------
