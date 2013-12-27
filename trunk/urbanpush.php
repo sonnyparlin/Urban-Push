@@ -3,7 +3,7 @@
    Plugin Name: Urban Push
    Plugin URI: http://sonnyparlin.com/2012/05/introducing-urban-push/
    Description: A plugin that uses the urban airship API to send a push notification from the post creation page.
-   Version: 1.0.4
+   Version: 1.0.5
    Author: Sonny Parlin
    Author URI: http://sonnyparlin.com
    */
@@ -70,14 +70,14 @@ function push_save_postdata( $post_id ) {
     if ( defined('DOING_AUTOSAVE') && DOING_AUTOSAVE )
         return;
 
-    if (strstr($_POST["password"], ""))
+    if (empty($_POST["password"]))
       return;
 
     $pass = get_option("urbanpush_password");
     if (!strstr($_POST["password"], $pass{'text_string'}))
       return;
 
-    if (strstr($_POST["push"], "")) 
+    if (empty($_POST["push"])) 
       return;
 
 
@@ -86,25 +86,25 @@ function push_save_postdata( $post_id ) {
       $appname = get_option("urbanpush_appname");
       $appkey = get_option("urbanpush_appkey");
       $appmaster = get_option("urbanpush_appmaster");
-      if ($appname{'text_string'} && !strstr($appname{'text_string'}, ""))
+      if ($appname{'text_string'} && !empty($appname{'text_string'}))
         send_push($post_id, $appname, $appkey, $appmaster);
 
       $appname2 = get_option("urbanpush_appname2");
       $appkey2 = get_option("urbanpush_appkey2");
       $appmaster2 = get_option("urbanpush_appmaster2");
-      if ($appname2{'text_string'} && !strstr($appname2{'text_string'}, ""))
+      if ($appname2{'text_string'} && !empty($appname2{'text_string'}))
         send_push($post_id, $appname2, $appkey2, $appmaster2);
 
       $appname3 = get_option("urbanpush_appname3");
       $appkey3 = get_option("urbanpush_appkey3");
       $appmaster3 = get_option("urbanpush_appmaster3");
-      if ($appname3{'text_string'} && !strstr($appname3{'text_string'}, ""))
+      if ($appname3{'text_string'} && !empty($appname3{'text_string'}))
         send_push($post_id, $appname3, $appkey3, $appmaster3);
 
       $appname4 = get_option("urbanpush_appname4");
       $appkey4 = get_option("urbanpush_appkey4");
       $appmaster4 = get_option("urbanpush_appmaster4");
-      if ($appname4{'text_string'} && !strstr($appname4{'text_string'}, ""))
+      if ($appname4{'text_string'} && !empty($appname4{'text_string'}))
         send_push($post_id, $appname4, $appkey4, $appmaster4);
     }
 
