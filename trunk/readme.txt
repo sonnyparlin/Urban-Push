@@ -3,7 +3,7 @@ Contributors: sonnyjitsu
 Donate link: http://sonnyparlin.com/2012/05/introducing-urban-push/
 Tags: urban airship, push notifications, push
 Requires at least: 2.0.2
-Tested up to: 3.4.1
+Tested up to: 3.8
 License: GPLv2
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -28,6 +28,9 @@ More features are coming like:
 
 == Frequently Asked Questions ==
 
+= How do I send a push to an Android Device? =
+When you add your app in the settings screen, make sure you choose "Android" for your Application Name. It will know to build the aps string for an Android device.
+
 = What is Urban Airship? =
 Urban Airship is the engine behind thousands of the world’s most successful mobile apps, providing a full suite of messaging and content delivery tools, including Push Notifications, Rich Media Messaging, In-App Purchase and Subscriptions. 
 
@@ -43,6 +46,9 @@ It seemed like a good number. If you need more, the plugin is easy enough to mod
 2. Push interface
 
 == Changelog ==
+
+= 1.0.4 =
+* Added support for Android
 
 = 1.0.3 =
 * Fixed bug that was causing a double push

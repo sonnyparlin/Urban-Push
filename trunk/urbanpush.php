@@ -2,8 +2,8 @@
    /*
    Plugin Name: Urban Push
    Plugin URI: http://sonnyparlin.com/2012/05/introducing-urban-push/
-   Description: A plugin that uses the Urban Airship API to send a push notification from the post creation page.
-   Version: 1.0.3
+   Description: A plugin that uses the urban airship API to send a push notification from the post creation page.
+   Version: 1.0.4
    Author: Sonny Parlin
    Author URI: http://sonnyparlin.com
    */
@@ -40,7 +40,13 @@ function send_push($post_id, $appname, $appkey, $appmaster) {
 
     $auth = $appkey{'text_string'} . ":" . $appmaster{'text_string'};
     $url = "https://go.urbanairship.com/api/push/broadcast/";
-    $data_string = '{ "badge": 0, "aps": { "alert": "'.$_POST["push"].'", "sound": "default" }  }';
+    $data_string = '{ "badge": "+1", "aps": { "alert": "'.$_POST["push"].'", "sound": "default" }  }';
+    $android_data_string = '{"android": {"alert": "'.$_POST["push"].'"}}';
+
+    if (strstr($appname{'text_string'}, "Android")) {
+      $data_string = $android_data_string;
+    }
+
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_POST, true);
     curl_setopt($ch, CURLOPT_USERPWD, $auth);
