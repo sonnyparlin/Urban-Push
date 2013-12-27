@@ -47,6 +47,9 @@ It seemed like a good number. If you need more, the plugin is easy enough to mod
 
 == Changelog ==
 
+= 1.0.5 =
+* Fixed Empty delimiter error
+
 = 1.0.4 =
 * Added support for Android
 
